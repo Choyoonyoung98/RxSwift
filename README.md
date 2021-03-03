@@ -1,6 +1,7 @@
 # RxSwift
 RxSwift, 도대체 뭘까?
-
+- [참고자료1 - 곰튀김님 RxSwift 강의 시즌1](https://www.youtube.com/playlist?list=PL03rJBlpwTaAh5zfc8KWALc3ADgugJwjq)  
+- [참고자료2 - 곰튀김님 RxSwift 강의 시즌2](https://www.youtube.com/playlist?list=PL03rJBlpwTaBrhux_C8RmtWDI_kZSLvdQ)
 ### - RxSwift를 공부하게 된 계기, 또는 사용해야겠다고 생각한 이유?
 > GitCat에서 특정 날짜에 대한 커밋 내역 기록을 불러오는 커밋 달력 기능을 제공합니다. 그런데 여러 날짜에 대해서 짧은 시간 안에 연이어 요청을 하게 되면 유저의 화면 입장에서는 가장 최근의 요청에 대해 기다리지만, 누적된 요청에 대해 모두 처리하고 난 뒤에 최근 요청에 대한 응답을 화면에 노출하기 때문에 유저가 원하는 데이터를 보기까지 많은 시간이 소요되는 것을 알 수 있었습니다. 해당 상황을 해결하기 위해서는 비동기로 요청 중인 작업을 취소하고 최근의 요청에 대해서만 응답을 받아야했습니다. 
 > 그러기 위해서는 OperationQueue 또는 수작업으로 DispatchQueue를 사용하되, flag를 두고 내내 체크하는 방법을 사용해야한다는 결론이 나왔습니다. 그런데 RxSwift에 이런 비동기 요청 작업 취소 행위를 dispose를 통해 쉽게 해준다고 해서 공부 중입니다.   
