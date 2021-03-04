@@ -7,7 +7,7 @@ target 'MemoApp' do
 
   # Pods for MemoApp
     pod 'RxSwift'
-    
+    pod 'RxCocoa'
     
     
     

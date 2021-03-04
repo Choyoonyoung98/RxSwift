@@ -18,8 +18,8 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O8n-dz-YhW">
                                 <rect key="frame" x="45" y="271" width="324" height="34"/>
-                                <nil key="textColor"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVo-0M-gBY">
                                 <rect key="frame" x="168" y="191" width="78" height="36"/>
@@ -29,7 +29,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cKR-sz-9uD">
                                 <rect key="frame" x="45" y="320" width="324" height="34"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sor-xP-5Df">
@@ -83,6 +83,7 @@
                     <connections>
                         <outlet property="idTextField" destination="O8n-dz-YhW" id="5mF-vZ-RYu"/>
                         <outlet property="idValidView" destination="Sor-xP-5Df" id="7X4-eR-1sK"/>
+                        <outlet property="loginBtn" destination="xnw-PI-SRr" id="dMm-hq-rLz"/>
                         <outlet property="pwTextField" destination="cKR-sz-9uD" id="7z1-zR-NBU"/>
                         <outlet property="pwValidView" destination="30b-JO-2Sf" id="3Iq-4D-hoe"/>
                     </connections>
