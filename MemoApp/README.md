@@ -33,4 +33,7 @@ idTextField.rx.text.orEmpty
 ```
 
 #### - CombindLatest VS Zip VS Merge
-> 
+1. **[combineLatest](http://reactivex.io/documentation/operators/combinelatest.html)** : 어느 하나라도 방출이 될 때마다 가장 최근의 값들을 combine하여 결과값을 계산하는 방식
+2. **[zip](http://reactivex.io/documentation/operators/zip.html)** : 두개의 스트림에서 모두 새로운 값이 방출이 될 때 결과값을 계산하는 방식
+3. **[Merge](http://reactivex.io/documentation/operators/merge.html)** : 각 Observable에서 내려오는 값들을 가지고 계산하지 않고, 새로운 값을 받을 때마다 그대로 방출해주는 방식
+
