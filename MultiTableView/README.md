@@ -1,6 +1,6 @@
 ## 하나의 ViewController에 여러 개의 TableViewController 구현하기
 
-### 기본
+### [기본](https://github.com/Choyoonyoung98/RxSwift/blob/main/MultiTableView/MultiTableView/SecondViewController.swift)
 #### 1) tableView 이름으로 구분
 #### 2) tag로 구분
 
