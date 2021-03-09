@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		4CADB2A625F7261B001A77BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CADB2A425F7261B001A77BD /* LaunchScreen.storyboard */; };
 		4CADB2B125F7261C001A77BD /* MultiTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CADB2B025F7261C001A77BD /* MultiTableViewTests.swift */; };
 		4CADB2BC25F7261C001A77BD /* MultiTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CADB2BB25F7261C001A77BD /* MultiTableViewUITests.swift */; };
+		4CADB2D925F72BA7001A77BD /* AnimalTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CADB2D825F72BA7001A77BD /* AnimalTVCell.swift */; };
+		4CADB2DE25F73058001A77BD /* FoodTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CADB2DD25F73057001A77BD /* FoodTVCell.swift */; };
+		4CADB2E325F732D3001A77BD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CADB2E225F732D3001A77BD /* SecondViewController.swift */; };
 		71B599648B1C1D57AC527F21 /* Pods_MultiTableView_MultiTableViewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F8D36F99BBF7FDBCB99399 /* Pods_MultiTableView_MultiTableViewUITests.framework */; };
 		7D11EBD21BBA5A20BF9D3009 /* Pods_MultiTableViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99379780ABE739A8DF2C0E0C /* Pods_MultiTableViewTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		4CADB2B725F7261C001A77BD /* MultiTableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiTableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CADB2BB25F7261C001A77BD /* MultiTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTableViewUITests.swift; sourceTree = "<group>"; };
 		4CADB2BD25F7261C001A77BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CADB2D825F72BA7001A77BD /* AnimalTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTVCell.swift; sourceTree = "<group>"; };
+		4CADB2DD25F73057001A77BD /* FoodTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTVCell.swift; sourceTree = "<group>"; };
+		4CADB2E225F732D3001A77BD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		612450B2554CE76453197014 /* Pods-MultiTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiTableView.release.xcconfig"; path = "Target Support Files/Pods-MultiTableView/Pods-MultiTableView.release.xcconfig"; sourceTree = "<group>"; };
 		99379780ABE739A8DF2C0E0C /* Pods_MultiTableViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiTableViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD36FC7DD83624D66C860176 /* Pods-MultiTableView-MultiTableViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiTableView-MultiTableViewUITests.debug.xcconfig"; path = "Target Support Files/Pods-MultiTableView-MultiTableViewUITests/Pods-MultiTableView-MultiTableViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +129,9 @@
 				4CADB2A225F7261B001A77BD /* Assets.xcassets */,
 				4CADB2A425F7261B001A77BD /* LaunchScreen.storyboard */,
 				4CADB2A725F7261B001A77BD /* Info.plist */,
+				4CADB2D825F72BA7001A77BD /* AnimalTVCell.swift */,
+				4CADB2DD25F73057001A77BD /* FoodTVCell.swift */,
+				4CADB2E225F732D3001A77BD /* SecondViewController.swift */,
 			);
 			path = MultiTableView;
 			sourceTree = "<group>";
@@ -165,7 +174,6 @@
 				4633F1B34DC6FB63D37F0082 /* Pods-MultiTableViewTests.debug.xcconfig */,
 				151B45FFA4B6B0C297E5A88F /* Pods-MultiTableViewTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -407,7 +415,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CADB2E325F732D3001A77BD /* SecondViewController.swift in Sources */,
 				4CADB29E25F72619001A77BD /* ViewController.swift in Sources */,
+				4CADB2DE25F73058001A77BD /* FoodTVCell.swift in Sources */,
+				4CADB2D925F72BA7001A77BD /* AnimalTVCell.swift in Sources */,
 				4CADB29A25F72619001A77BD /* AppDelegate.swift in Sources */,
 				4CADB29C25F72619001A77BD /* SceneDelegate.swift in Sources */,
 			);
