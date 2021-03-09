@@ -1,8 +1,12 @@
 ## 하나의 ViewController에 여러 개의 TableViewController 구현하기
 
 ### 기본
+#### 1) tableView 이름으로 구분
+#### 2) tag로 구분
 
-### RxSwift로 구현하는 4가지 방법
+### 번외) RxSwift로 tableView를 구현하는 4가지 방법
+크게는 **tableView.rx.items에 bind하는 법** , **RxDataSource를 사용하는 법** 2가지로 구분됩니다.  
+
 #### 1) tableView.rx.items
 ```
 private func bindTableView() {
