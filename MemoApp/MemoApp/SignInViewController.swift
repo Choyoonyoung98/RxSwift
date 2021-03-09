@@ -19,56 +19,38 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var pwValidView: UIView!
     
     @IBOutlet weak var loginBtn: UIButton!
+    let signInViewModel = SignInViewModel()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindUI()
     }
     
-    var disposeBag = DisposeBag()
     private func bindUI() {
-        
-        bindIdValidView()
-        bindPwValidView()
-        
-        //첫번째값이 변경이 되든, 두번째값이 변경이 되든
-        //하나라도 바뀌면 가장 최근의 값을 가지고 subscribe해준다
-        
-        //zip: 모든 값이 변경되어야 데이터를 전달
-        //merge: 두개의 스트림을 받는데, 순서대로 내려보내준다. 계산된 결과값을 보내지 못한다
-        Observable.combineLatest(
-            idTextField.rx.text.orEmpty.map(checkIdValid),
-            pwTextField.rx.text.orEmpty.map(checkPasswordValid),
-            resultSelector: { s1, s2 in s1 && s2 }
-        )
-        .subscribe(onNext: { b in
-            self.loginBtn.isEnabled = b
-        })
-    }
-    
-    private func bindIdValidView() {
+        //ViewModel에게 입력값을 알려주어야 한다!
+        //input: 2 id, pw 입력값
         idTextField.rx.text.orEmpty
-            .map(checkIdValid)
-            .subscribe(onNext: { b in
-                self.idValidView.isHidden = b
-        })
-        .disposed(by: disposeBag)
-    }
-    
-    private func bindPwValidView() {
+            .bind(to: signInViewModel.idText)
+            .disposed(by: disposeBag)
+        
         pwTextField.rx.text.orEmpty
-            .map(checkPasswordValid)
-            .subscribe(onNext: { b in
-                self.pwValidView.isHidden = b
+            .subscribe(onNext: { pw in
+            self.signInViewModel.setPwText(pw)
         })
-        .disposed(by: disposeBag)
-    }
-    
-    private func checkIdValid(_ id: String) -> Bool {
-        return id.contains("@") && id.contains(".")
-    }
-    private func checkPasswordValid(_ pw: String) -> Bool {
-        return pw.count > 5
-    }
+            .disposed(by: disposeBag)
+        
+        //output: 1 id, pw valid check
+        signInViewModel.isIdValid
+            .bind(to: idValidView.rx.isHidden)
+        
+        signInViewModel.isPwValid
+            .bind(to: pwValidView.rx.isHidden)
+        //output: 2 loginBtn의 enable 상태 변환
+        
+        Observable.combineLatest(signInViewModel.isIdValid, signInViewModel.isPwValid) { $0 && $1 }
+            .bind(to: loginBtn.rx.isEnabled)
+            .disposed(by: disposeBag)
 
+    }
 }

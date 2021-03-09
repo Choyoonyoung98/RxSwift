@@ -1,0 +1,6 @@
+framework module Pods_MultiTableView_MultiTableViewUITests {
+  umbrella header "Pods-MultiTableView-MultiTableViewUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
