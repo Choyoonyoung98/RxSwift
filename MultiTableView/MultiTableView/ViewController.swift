@@ -33,9 +33,10 @@ class ViewController: UIViewController {
 extension ViewController {
     private func bindTableView1() {
         let animalsOb: Observable<[String]> = Observable.of(animals)
+        
         animalsOb.bind(to: tableView1.rx.items) {(tableView: UITableView, index: Int, element: String) -> UITableViewCell in
             guard let cell1 = self.tableView1.dequeueReusableCell(withIdentifier: self.animalCell) as? AnimalTVCell else { return UITableViewCell() }
-            cell1.titleLabel.text = element
+            cell1.titleLabel.text = element //tableViewItems[row]
             cell1.titleLabel.textColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
             return cell1
         }
@@ -53,12 +54,3 @@ extension ViewController {
         .disposed(by: disposeBag)
     }
 }
-
-
-/*
- RxSwift로 TableView 구현하기(4가지)
- 
- 
- 1. tableView.rx.items 사용하기
- 
- */
