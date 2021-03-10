@@ -12,7 +12,9 @@
 private func bindTableView() {
   let cities = ["London", "Vienna", "Lisbon"]
 
-  let citiesOb: Observable<[String]> = Observable.of(cities)
+  let citiesOb: Observable<[String]> = Observable.of(cities) //cities string 배열을 observable로 선언
+  //cities observable을 tableView.rx.items에 바인딩합니다. 
+  //이렇게 되면 items 메소드 내의 source 파라미터에 Observable<string>이 전달되게 됩니다.  
   citiesOb.bind(to: tableView.rx.items) { (tableView: UITableView, index: Int, element: String) -> UITableViewCell in
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "NameCell") else { return UITableViewCell() }
     cell.textLabel?.text = element
@@ -20,6 +22,23 @@ private func bindTableView() {
   }
   .disposed(by: disposeBag)
 }
+```
+
+- items 내부를 뜯어보자!
+> 별도의 UITableViewDataSource를 설정할 필요가 없게 됩니다.  
+> tableView.rx.items는 obsesrvable sequence를 바인딩하는 function입니다.  
+> 이 바인딩은 제공된 observable을 subscribe하는 가상의 observableType를 만들고, 자신을 스스로 dataSource로 설정합니다.  
+```
+ public func items<Sequence: Swift.Sequence, Source: ObservableType>
+  (_ source: Source)
+  -> (_ cellFactory: @escaping (UITableView, Int, Sequence.Element) -> UITableViewCell)
+  -> Disposable
+  where Source.Element == Sequence {
+    return { cellFactory in
+      let dataSource = RxTableViewReactiveArrayDataSourceSequenceWrapper<Sequence>(cellFactory: cellFactory)
+      return self.items(dataSource: dataSource)(source)
+    }
+  }
 ```
 
 #### 2) tableView.rx.items(cellIdentifier: String)
