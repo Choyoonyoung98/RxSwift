@@ -32,7 +32,7 @@ func douwnloadJson(_ url: String) -> Obsesrvable<String?> {
   .subscribe { event in //이벤트의 종류는 총 3가지!
     switch event {
     case let .next(json)"
-      beak
+      break
     case .completed:
       break
     case .error:
